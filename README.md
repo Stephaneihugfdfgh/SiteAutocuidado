@@ -5,7 +5,7 @@ O site foi desenvolvido como prática de front-end, utilizando HTML, mínimo de 
 
 Página online
 
-https://github.com/Stephaneihugfdfgh/SiteAutocuidado
+https://stephaneihugfdfgh.github.io/SiteAutocuidado/
 
 Funcionalidades do projeto
 Página responsiva adaptada para diferentes tamanhos de tela
