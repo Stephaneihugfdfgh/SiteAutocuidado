@@ -1,0 +1,83 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+.hero {
+    background: #ffe1f1;
+    height: 60vh;
+    color: #ff009d;
+    padding-top: 80px;
+    min-height: 100vh;        
+    background-size: cover;
+}
+
+
+.btn-pink {
+    background-color: #f86dc3;
+    color: white;
+}
+
+.btn-pink:hover {
+    background-color: #ff51bc;
+}
+.btn-blue {
+    background-color: #6cb4f7;
+    color: white;
+}
+.contato-bg {
+    background: #ffe1f1;
+    min-height: 70vh;
+    color: #ff009d;
+    display: flex;
+    align-items: center;
+}
+
+footer {
+    background-color: #ff69b4;
+    color: white;
+}
+#resultadoPele {
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 1rem;
+  min-height: 100px;
+  transition: all 0.4s ease;
+}
+
+.sucesso-msg {
+  background-color: #16c94934;
+  border: 2px solid #18c764;
+  color: #00581d;
+  border-radius: 8px;
+  padding: 1.5rem;
+  max-width: 500px;
+  margin: 1rem auto;
+  animation: fadeIn 0.7s ease-in-out;
+  
+}
+
+.erro-msg {
+  background-color: #ee3f3f3d;
+  border: 2px solid #c20404;
+  color: #a10000;
+  border-radius: 8px;
+  padding: 1rem;
+  max-width: 400px;
+  margin: 1rem auto;
+  animation: shake 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+

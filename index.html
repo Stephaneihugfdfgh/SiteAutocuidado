@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autocuidados</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="scr/estilo.css">
+</head>
+
+<body>
+
+    <header class="bg-dark shadow-sm">
+        <nav class="navbar navbar-expand-lg fixed-top bg-body-tertiary">
+            <div class="container">
+
+                <a class="navbar-brand fw-bold" href="#">Autocuidados ✨</a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div id="menu" class="collapse navbar-collapse">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a href="#dicas" class="nav-link">Dicas</a></li>
+                        <li class="nav-item"><a href="#rotina" class="nav-link">Rotina</a></li>
+                        <li class="nav-item"><a href="#skincare" class="nav-link">Skincare</a></li>
+                        <li class="nav-item"><a href="#contato" class="nav-link">Contato</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero d-flex align-items-center justify-content-center">
+        <div class="text-center">
+            <h1 class="fw-bold">Seu Glow Up Começa Aqui ✨</h1>
+            <p class="lead">
+                Pequenos cuidados diários fazem toda a diferença na sua autoestima.
+            </p>
+        </div>
+    </section>
+
+    <main class="container my-5">
+
+        <!-- DICAS -->
+        <section id="dicas" class="mb-5">
+            <h2 class="mb-3">Dicas de Beleza</h2>
+            <img src="https://s.zst.com.br/cms-assets/2022/05/autocuidado-feminino.webp"
+                class="img-fluid rounded mb-3 shadow" alt="Imagem de cuidados de beleza">
+
+            <ul class="list-group">
+                <li class="list-group-item">Hidratação diária da pele</li>
+                <li class="list-group-item">Beber bastante água</li>
+                <li class="list-group-item">Cuidar do cabelo com máscaras semanais</li>
+                <li class="list-group-item">Usar protetor solar todos os dias</li>
+            </ul>
+        </section>
+
+        <!-- ROTINA (DOM) -->
+        <section id="rotina" class="mb-5">
+            <h2 class="mb-3">Rotina de Glow Up</h2>
+
+            <div class="row">
+                <div class="col-md-6">
+
+                    <input type="text" id="itemRotina" class="form-control mb-2" placeholder="Digite um item da rotina">
+
+                    <input type="number" id="posRotina" class="form-control mb-3" placeholder="Posição (opcional)"
+                        min="1">
+
+                    <div class="d-flex gap-2 flex-wrap mb-3">
+                        <button class="btn btn-success" onclick="inserirInicio()">Inserir no Início</button>
+                        <button class="btn btn-primary" onclick="inserirFim()">Inserir no Fim</button>
+
+                        <button class="btn btn-warning text-dark" onclick="inserirPosicao()">Inserir na Posição</button>
+                        <button class="btn btn-danger" onclick="removerInicio()">Remover Início</button>
+                        <button class="btn btn-danger" onclick="removerFim()">Remover Fim</button>
+                        <button class="btn btn-dark" onclick="removerPosicao()">Remover Posição</button>
+                    </div>
+
+                    <ul id="listaRotina" class="list-group"></ul>
+                </div>
+
+                <div class="col-md-6">
+                    <img src="https://www.slowbeauty.com.br/wp-content/uploads/2024/04/imagem-ilustrativa-de-rotina-de-beleza-noturna.webp"
+                        class="img-fluid rounded shadow" alt="Imagem rotina">
+                </div>
+            </div>
+        </section>
+
+        <!-- SKINCARE -->
+        <section id="skincare" class="mb-5">
+            <h2 class="mb-3">Skincare Diário</h2>
+
+            <img src="https://i.pinimg.com/736x/9d/67/dd/9d67ddce584c28d2d2da61364828d2aa.jpg"
+                class="img-fluid rounded mb-3 shadow" alt="Imagem de skincare">
+
+            <p>
+                Uma rotina simples de skincare ajuda a manter a pele limpa,
+                hidratada e saudável no dia a dia.
+            </p>
+
+            <ul class="list-group">
+                <li class="list-group-item">Limpeza do rosto</li>
+                <li class="list-group-item">Hidratação da pele</li>
+                <li class="list-group-item">Uso de protetor solar</li>
+                <li class="list-group-item">Cuidados noturnos</li>
+            </ul>
+
+        </section>
+    </main>
+
+    <!-- SIMULAÇÃO -->
+    <section id="simulacao" class="container mb-5">
+        <h2 class="mb-3">Rotina do Dia</h2>
+        <p>Escolha um período do dia para simular sua rotina de autocuidado:</p>
+
+        <div class="d-flex gap-2 mb-3">
+            <!-- Botões de simulação manipulei para deixar rosinha com css também -->
+            <button class="btn btn-pink" onclick="simular('manha')">Manhã</button>
+            <button class="btn btn-pink" onclick="simular('tarde')">Tarde</button>
+            <button class="btn btn-pink" onclick="simular('noite')">Noite</button>
+        </div>
+
+        <div id="resultadoSimulacao" class="p-3 bg-light rounded shadow-sm"></div>
+    </section>
+
+    <section id="avaliacao-pele" class="container mb-5">
+        <h2 class="mb-3">Avaliação da Pele</h2>
+        <p>Conte pra gente como está sua pele hoje:</p>
+
+        <div class="card p-4 shadow-sm">
+            <div class="mb-3">
+                <label class="form-label">Seu nome</label>
+                <input type="text" id="nomePele" class="form-control" placeholder="Digite seu nome">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Situação da pele</label>
+                <select id="situacaoPele" class="form-select">
+                    <option value="">Selecione</option>
+                    <option value="seca">Pele seca</option>
+                    <option value="oleosa">Pele oleosa</option>
+                    <option value="mista">Pele mista</option>
+                    <option value="sensivel">Pele sensível</option>
+                </select>
+            </div>
+
+            <button onclick="avaliarPele()" class="btn btn-warning fw-bold">
+                Avaliar pele
+            </button>
+
+            <div id="resultadoPele" class="mt-3 fw-bold"></div>
+        </div>
+    </section>
+
+
+    <section id="contato" class="contato-bg">
+        <div class="container">
+            <div class="row align-items-center text-center text-md-start">
+
+                <!-- Título -->
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h2 class="fw-bold">Entre em Contato 💌</h2>
+                </div>
+
+                <!-- Email -->
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5>📧 Email</h5>
+                    <p>contato@beautyxzs.com</p>
+                </div>
+
+                <!-- Redes Sociais -->
+                <div class="col-md-4">
+                    <h5>📱 Redes Sociais</h5>
+                    <i class="fa-brands fa-instagram"></i>
+                    <p>Instagram: @beautyxzs_</p>
+                    <p>TikTok: @beautyxzs_</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <footer class="text-center p-3">
+        <p class="m-0">Glow Up Girls © 2025</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- JavaScript -->
+    <script src="scr/script.js"></script>
+
+</body>
+
+</html>
